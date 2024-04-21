@@ -7,11 +7,12 @@ import {
   updateRecipe,
   deleteRecipe,
 } from "../controllers/recipeController";
+import authMiddleware from "../middleware/middleware";
 
 const router = express.Router();
 
 router.get("/", getRecipes);
-router.get("/:id", getRecipe);
-router.post("/", createRecipe);
-router.put("/:id", updateRecipe);
-router.delete("/:id", deleteRecipe);
+router.get("/:id", authMiddleware, getRecipe);
+router.post("/", authMiddleware, createRecipe);
+router.put("/:id", authMiddleware, updateRecipe);
+router.delete("/:id", authMiddleware, deleteRecipe);
