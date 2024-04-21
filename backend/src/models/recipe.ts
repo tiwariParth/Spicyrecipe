@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export interface Irecipe extends mongoose.Document {
+export interface Irecipe extends mongoose.Schema {
   title: string;
   description: string;
   ingredients: string;
