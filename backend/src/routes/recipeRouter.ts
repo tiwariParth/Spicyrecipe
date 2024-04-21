@@ -11,6 +11,7 @@ import authMiddleware from "../middleware/middleware";
 
 const router = express.Router();
 
+
 router.get("/", getRecipes);
 router.get("/:id", authMiddleware, getRecipe);
 router.post("/", authMiddleware, createRecipe);
