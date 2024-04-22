@@ -31,6 +31,7 @@ export const createRecipe = async (req: Request, res: Response) => {
       description: req.body.description,
       ingredients: req.body.ingredients,
       instructions: req.body.instructions,
+      author: req.body.author,
     });
     await recipe.save();
     res.json(recipe);

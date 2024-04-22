@@ -7,7 +7,7 @@ interface DecodedUser extends JwtPayload {
 }
 
 const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
-  const token = req.header("x-auth-token");
+  const token = req.header("authorization");
   if (!token) {
     return res.status(401).json({ msg: "No token, authorization denied" });
   }
