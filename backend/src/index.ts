@@ -1,5 +1,3 @@
-// src/index.ts
-
 import express from "express";
 import connectDB from "./config/database";
 import authRoutes from "./routes/authRoute";
