@@ -8,7 +8,12 @@ const SignUp = () => {
   };
   return (
     <div>
-      <InputDemo value="hello" onChange={() => {}} />
+      <InputDemo
+        value="Choose your username"
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      />
     </div>
   );
 };
