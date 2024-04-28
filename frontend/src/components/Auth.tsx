@@ -23,7 +23,7 @@ const Auth = ({ type }: { type: "register" | "login" }) => {
       console.log(response.data);
       const jwt = response.data.token;
       localStorage.setItem("token", jwt);
-      navigate("/blogs");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }
