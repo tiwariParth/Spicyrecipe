@@ -3,7 +3,7 @@ import Auth from "../components/Auth";
 const SignUp = () => {
   return (
     <div className="">
-      <Auth type={"signup"} />
+      <Auth type={"register"} />
     </div>
   );
 };

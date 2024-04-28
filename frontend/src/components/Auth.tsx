@@ -6,7 +6,7 @@ import axios from "axios";
 import { BACKEND_URL } from "../config/config";
 import img from "../assets/katie-smith-uQs1802D0CQ-unsplash.jpg";
 
-const Auth = ({ type }: { type: "signup" | "signin" }) => {
+const Auth = ({ type }: { type: "register" | "login" }) => {
   const navigate = useNavigate();
   const [postInput, setPostInputs] = useState<SignUpUser>({
     email: "",
@@ -17,7 +17,7 @@ const Auth = ({ type }: { type: "signup" | "signin" }) => {
   const sendRequest = async () => {
     try {
       const response = await axios.post(
-        `${BACKEND_URL}/api/v1/user/${type}`,
+        `${BACKEND_URL}/api/auth/${type}`,
         postInput
       );
       console.log(response.data);
@@ -38,23 +38,23 @@ const Auth = ({ type }: { type: "signup" | "signin" }) => {
     >
       <div className="px-6 py-4 rounded-lg bg-opacity-50 bg-black">
         <h1 className=" text-4xl text-center font-extrabold ">
-          {type === "signup" ? "Create an account" : "Login to your account"}
+          {type === "register" ? "Create an account" : "Login to your account"}
         </h1>
         <div className="mt-2">
           <p className="text-slate-400 text-center ">
-            {type === "signin"
+            {type === "login"
               ? "Don't have an account?"
               : "Already have an account?"}
             <Link
               className="underline"
-              to={type === "signin" ? "/signup" : "/signin"}
+              to={type === "login" ? "/register" : "/login"}
             >
-              {type === "signin" ? "Sign Up" : "Login"}
+              {type === "login" ? "Sign Up" : "Login"}
             </Link>
           </p>
         </div>
         <div className=" flex flex-col">
-          {type === "signup" ? (
+          {type === "register" ? (
             <InputBox
               label="Username"
               placeholder="Enter your name"
@@ -93,7 +93,7 @@ const Auth = ({ type }: { type: "signup" | "signin" }) => {
             onClick={sendRequest}
             className="bg-slate-900 hover:bg-black text-white font-bold py-2 px-4 border border-black-700 rounded-lg mb-2"
           >
-            {type === "signup" ? "Sign Up" : "Sign In"}
+            {type === "register" ? "Sign Up" : "Sign In"}
           </button>
         </div>
       </div>

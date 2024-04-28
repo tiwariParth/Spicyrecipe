@@ -7,7 +7,7 @@ const zod = require("zod");
 const registerUserSchema = zod.object({
   email: zod.string().email(),
   password: zod.string(),
-  username: zod.string(),
+  name: zod.string(),
 });
 
 export const registerUser = async (req: Request, res: Response) => {
@@ -23,7 +23,7 @@ export const registerUser = async (req: Request, res: Response) => {
     user = new User({
       email: req.body.email,
       password: req.body.password,
-      username: req.body.username,
+      name: req.body.username,
     });
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(req.body.password, salt);

@@ -1,5 +1,4 @@
-import React from "react";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignIn from "./page/SignIn";
 import SignUp from "./page/SignUp";
 
@@ -9,8 +8,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<SignUp />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="/register" element={<SignUp />} />
+          <Route path="/login" element={<SignIn />} />
         </Routes>
       </BrowserRouter>
     </div>

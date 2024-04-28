@@ -4,7 +4,7 @@ import Auth from "../components/Auth";
 const SignIn = () => {
   return (
     <div>
-      <Auth type="signin" />
+      <Auth type="login" />
     </div>
   );
 };
